@@ -26,7 +26,7 @@ public class BaseClass extends PageObjectHandler{
 
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true)
-    public void setupMethod(@Optional("chrome") String browser) throws MalformedURLException {
+    public void setupMethod(@Optional("chrome") String browser) {
         setInitialConfiguration(browser);
     }
 
@@ -47,12 +47,7 @@ public class BaseClass extends PageObjectHandler{
         }
     }
 
-    private void setInitialConfiguration(String browser) throws MalformedURLException {
-
-//        DesiredCapabilities cap = DesiredCapabilities.chrome();
-//        cap.setBrowserName("chrome");
-//        String Node = "http://localhost:4444/wd/hub";
-//        driver = new RemoteWebDriver(new URL(Node), cap);
+    private void setInitialConfiguration(String browser) {
 
         System.out.println("** Before Method Setup");
 
@@ -79,6 +74,3 @@ public class BaseClass extends PageObjectHandler{
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }
-
-
-//npm i -g webdriver-manager

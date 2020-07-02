@@ -9,6 +9,12 @@ public class SearchResultsPage extends BasePage{
     private static final String ERROR_WHEN_THERE_IS_NO_RESULTS = "There is no product that matches the search criteria.";
 
     private By resultThumbs = By.cssSelector(".product-thumb");
+    private String productXpath = "//div[@class='product-thumb']//a[text()='%s']";
+
+    public void clickProductByName(String productName){
+
+        driver.findElement(By.xpath(String.format(productXpath, productName))).click();
+    }
 
     public SearchResultsPage(WebDriver _driver){
         super(_driver);

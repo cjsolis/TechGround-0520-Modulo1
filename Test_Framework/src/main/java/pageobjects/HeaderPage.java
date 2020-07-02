@@ -9,17 +9,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HeaderPage extends BasePage{
 
-//   elementos
+    //region Elements
     private By myAccountLinkLocator = By.xpath("//span[text()='My Account']");
     private By loginLocator = By.linkText("Login");
+    private By registerLocator = By.linkText("Register");
     private By logoutLocator = By.xpath("//a[text()='Logout']");
     private By searchField = By.name("search");
+    //endregion
 
 
     public HeaderPage(WebDriver _driver){
         super(_driver);
     }
 
+    //region Actions
     public void clickOnMyAccount(){
         driver.findElement(myAccountLinkLocator).click();
     }
@@ -28,10 +31,15 @@ public class HeaderPage extends BasePage{
         driver.findElement(loginLocator).click();
     }
 
+    public void clickOnRegister(){
+        driver.findElement(registerLocator).click();
+    }
+
     public void goToLogin(){
         this.clickOnMyAccount();
         this.clickOnLogin();
     }
+    //endregion
 
     public boolean isLogoutEnabled(){
         return driver.findElement(logoutLocator).isEnabled();

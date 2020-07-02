@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <xmlSuite>src/test/resources/suites/AccountSuite.xml</xmlSuite>
+        <xmlSuite>src/test/resources/suites/FinalProjectSuite.xml</xmlSuite>
     </properties>
 
     <dependencies>

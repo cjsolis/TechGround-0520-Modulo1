@@ -6,17 +6,16 @@ import org.openqa.selenium.WebElement;
 
 import java.security.Policy;
 
-public class CartPage {
+public class CartPage extends BasePage {
 
     private String productRowLocator = "//div[@id='content']//tr[contains(.,'<product>')]";
     private WebElement productRow;
 
     private By inputOnRowLocator = By.cssSelector("input");
-
-    WebDriver driver;
+    private By checkoutLocator = By.linkText("Checkout");
 
     public CartPage(WebDriver _driver){
-        this.driver = _driver;
+        super(_driver);
     }
 
     public void goTo(){
@@ -44,4 +43,6 @@ public class CartPage {
             return 0;
         }
     }
+
+    public void clickCheckout(){ driver.findElement(checkoutLocator).click(); }
 }

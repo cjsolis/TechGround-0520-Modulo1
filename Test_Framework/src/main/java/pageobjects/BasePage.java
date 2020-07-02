@@ -18,18 +18,16 @@ public class BasePage {
         return driver.getCurrentUrl();
     }
 
-    public Boolean isSuccessMessageVisibleWithText(String text){
+    public Boolean isSuccessMessageVisibleWithText(String expectedMessage){
         return driver.findElement(successAlertLocator)
                 .getText()
-                .contains(text);
+                .contains(expectedMessage);
     }
 
     public boolean isErrorMessageVisibleWithText(String expectedMessage){
         boolean result = driver.findElement(alertError)
                 .getText()
-                .toLowerCase()
-                .trim()
-                .equals(expectedMessage.toLowerCase());
+                .contains(expectedMessage);
 
         return result;
     }

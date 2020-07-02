@@ -13,6 +13,8 @@ public class PageObjectHandler {
     private HomePage _homePage;
     private ProductPage _productPage;
     private CartPage _cartPage;
+    private RegisterPage _registerPage;
+    private MenuSuperior _menuSuperior;
 
     public PageObjectHandler(){
 
@@ -25,6 +27,7 @@ public class PageObjectHandler {
         _homePage = null;
         _productPage = null;
         _cartPage = null;
+        _menuSuperior = null;
     }
 
     public HeaderPage headerPage() {
@@ -61,5 +64,17 @@ public class PageObjectHandler {
         if (_cartPage == null)
             _cartPage = new CartPage(driver);
         return _cartPage;
+    }
+
+    public RegisterPage registerPage(){
+        if (_registerPage == null)
+            _registerPage = new RegisterPage(driver);
+        return _registerPage;
+    }
+
+    public MenuSuperior menuSuperior(){
+        if (_menuSuperior == null)
+            _menuSuperior = new MenuSuperior(driver);
+        return _menuSuperior;
     }
 }
