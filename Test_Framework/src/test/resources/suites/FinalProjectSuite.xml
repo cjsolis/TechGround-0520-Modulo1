@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Final Project Tests">
+    <parameter name="browser" value="chrome"></parameter>
+    <test name="Register a new client and verifies after that it is logged in">
+        <classes>
+            <class name="selenium.SignupTests">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Search a product, add it to the cart and try to checkout">
+        <parameter name="productName" value="MacBook"/>
+        <classes>
+            <class name="selenium.SearchTests">
+                <methods>
+                    <include name="Test_Search_Product_Cart_Checkout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verifies a product price from a json file in different currencies">
+        <classes>
+            <class name="selenium.ProductsTests">
+            </class>
+        </classes>
+    </test>
+</suite>
